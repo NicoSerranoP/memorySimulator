@@ -1,0 +1,8 @@
+512 %PageSize
+32 %Memorysizeinframes
+8	%Quantum
+4	%Numrofproccess
+data1_p1.txt
+data1_p2.txt
+data1_p3.txt
+data1_p4.txt
