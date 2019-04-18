@@ -352,7 +352,7 @@ int main(int argc, char const *argv[]) {
             //if there was no clean page with minimum value, then load new page into the dirty minimum page frame
             if(swt){
               //then load all the new information
-              if(debug) printf("Fault! frame:%d page:%d, pID:%d, dirty: %d\n",i+1,(aOperation/pageSize),capturedpID,pTable[i][dirty]);
+              if(debug) printf("Fault! frame:%d page:%d, pID:%d, dirty: %d\n",minposition+1,(aOperation/pageSize),capturedpID,pTable[minposition][dirty]);
               pTable[minposition][pID] = capturedpID;
               pTable[minposition][page] = aOperation/pageSize;
               pTable[minposition][ref] = 1; //This variable is not useful in version 2
@@ -365,7 +365,7 @@ int main(int argc, char const *argv[]) {
           //if the page with minimum value is not dirty
           else{
             //then load all the new information
-            if(debug) printf("Fault! frame:%d page:%d, pID:%d, dirty: %d\n",i+1,(aOperation/pageSize),capturedpID,pTable[i][dirty]);
+            if(debug) printf("Fault! frame:%d page:%d, pID:%d, dirty: %d\n",minposition+1,(aOperation/pageSize),capturedpID,pTable[minposition][dirty]);
             pTable[minposition][pID] = capturedpID;
             pTable[minposition][page] = aOperation/pageSize;
             pTable[minposition][ref] = 1; //This variable is not useful in version 2
@@ -426,7 +426,7 @@ int main(int argc, char const *argv[]) {
             //if there was no clean page with minimum value, then load new page into the dirty minimum page frame
             if(swt){
               //then load all the new information
-              if(debug) printf("Fault! frame:%d page:%d, pID:%d, dirty: %d\n",i+1,(aValue/pageSize),capturedpID,pTable[i][dirty]);
+              if(debug) printf("Fault! frame:%d page:%d, pID:%d, dirty: %d\n",minposition+1,(aValue/pageSize),capturedpID,pTable[minposition][dirty]);
               pTable[minposition][pID] = capturedpID;
               pTable[minposition][page] = aValue/pageSize;
               pTable[minposition][ref] = 1; //This variable is not useful in version 2
@@ -439,7 +439,7 @@ int main(int argc, char const *argv[]) {
           //if the page with minimum value is not dirty
           else{
             //then load all the new information
-            if(debug) printf("Fault! frame:%d page:%d, pID:%d, dirty: %d\n",i+1,(aValue/pageSize),capturedpID,pTable[i][dirty]);
+            if(debug) printf("Fault! frame:%d page:%d, pID:%d, dirty: %d\n",minposition+1,(aValue/pageSize),capturedpID,pTable[minposition][dirty]);
             pTable[minposition][pID] = capturedpID;
             pTable[minposition][page] = aValue/pageSize;
             pTable[minposition][ref] = 1; //This variable is not useful in version 2
